@@ -7,7 +7,7 @@ const userMenuRegistry = registry.category("user_menuitems");
 userMenuRegistry.remove("documentation");
 userMenuRegistry.remove("support");
 
-// Hide odoo_account menu if hide_account is True
-if (session.disable_odoo_online_hide_account) {
+// Hide odoo_account menu if show_account is False (unchecked)
+if (!session.disable_odoo_online_hide_account) {
     userMenuRegistry.remove("odoo_account");
 }

@@ -10,8 +10,8 @@ class IrHttp(models.AbstractModel):
         hide_account_str = (
             self.env["ir.config_parameter"]
             .sudo()
-            .get_param("disable_odoo_online.hide_account", "False")
-        )
-        # Convert string "True"/"False" to boolean
-        session_data["disable_odoo_online_hide_account"] = hide_account_str == "True"
+            show_account_str = self.env["ir.config_parameter"].sudo().get_param(
+            "disable_odoo_online.show_account", "True"
+    )
+    session_data["disable_odoo_online_show_account"] = show_account_str != "False"
         return session_data

@@ -5,10 +5,10 @@ from odoo.tests import common
 
 
 class TestDisableOdooOnline(common.TransactionCase):
-    def test_session_info_hide_account_default(self):
-        """By default, hide_account should be False (menu visible)."""
+    def test_session_info_show_account_default(self):
+        """By default, show_account should be True (menu visible)."""
         session_info = self.env["ir.http"].session_info()
-        self.assertFalse(session_info.get("disable_odoo_online_hide_account", False))
+        self.assertTrue(session_info.get("disable_odoo_online_show_account", True))
 
     def test_session_info_hide_account_enabled(self):
         """When hide_account is True, menu should be hidden."""

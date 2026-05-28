@@ -6,11 +6,11 @@
         <field name="arch" type="xml">
             <xpath expr="//div[@id='about']/block" position="inside">
                 <setting
-                    id="disable_odoo_online_hide_account"
-                    string="Hide 'My Odoo.com account' menu"
-                    help="Check to hide the My Odoo.com account entry in the user dropdown menu."
-                >
-                    <field name="disable_odoo_online_hide_account" />
+                    id="disable_odoo_online_show_account"
+                    string="Show 'My Odoo.com account'"
+                    help="Uncheck to hide the My Odoo.com account entry in the user dropdown menu."
+>
+                    <field name="disable_odoo_online_show_account" />
                 </setting>
             </xpath>
         </field>
