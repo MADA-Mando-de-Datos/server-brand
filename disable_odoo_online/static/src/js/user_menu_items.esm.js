@@ -1,7 +1,13 @@
-import {registry} from "@web/core/registry";
-// Needed so that this is run after adding the menu entries
-import {user_menu_items} from "@web/webclient/user_menu/user_menu_items"; // eslint-disable-line no-unused-vars
+import { registry } from "@web/core/registry";
+import { session } from "@web/session";
+import "@web/webclient/user_menu/user_menu_items";
 
-registry.category("user_menuitems").remove("documentation");
-registry.category("user_menuitems").remove("support");
-registry.category("user_menuitems").remove("odoo_account");
+const userMenuRegistry = registry.category("user_menuitems");
+
+userMenuRegistry.remove("documentation");
+userMenuRegistry.remove("support");
+
+// Hide odoo_account menu if hide_account is True
+if (session.disable_odoo_online_hide_account) {
+    userMenuRegistry.remove("odoo_account");
+}

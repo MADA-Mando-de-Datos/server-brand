@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="res_config_settings_view_form" model="ir.ui.view">
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="base_setup.res_config_settings_view_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//div[@id='about']/block" position="inside">
+                <setting
+                    id="disable_odoo_online_hide_account"
+                    string="Hide 'My Odoo.com account' menu"
+                    help="Check to hide the My Odoo.com account entry in the user dropdown menu."
+                >
+                    <field name="disable_odoo_online_hide_account" />
+                </setting>
+            </xpath>
+        </field>
+    </record>
+</odoo>
